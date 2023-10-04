@@ -34,5 +34,21 @@
       "ecoeye",
       "currentcost"
     ]
-  }
+  },
+  "contributing": {
+    "donate": {
+      "paypal": {
+        "username": "oh2th"
+      },
+      "githubSponsors": {
+        "username": "oh2th"
+      }
+    }
+  },
+  "source": "https://github.com/oh2th/com.energyhive",
+  "support": "https://github.com/oh2th/com.energyhive",
+  "bugs": {
+    "url": "https://github.com/oh2th/com.energyhive/issues"
+  },
+  "homepage": "https://oh2th.fi/tapio/homey/"
 }
