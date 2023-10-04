@@ -1,0 +1,38 @@
+{
+  "id": "com.energyhive",
+  "version": "1.0.0",
+  "compatibility": ">=5.0.0",
+  "sdk": 3,
+  "platforms": [
+    "local"
+  ],
+  "name": {
+    "en": "Energyhive"
+  },
+  "description": {
+    "en": "Real-time display of your energy usage"
+  },
+  "category": [
+    "energy"
+  ],
+  "permissions": [],
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png",
+    "xlarge": "/assets/images/xlarge.png"
+  },
+  "author": {
+    "name": "Tapio Heiskanen",
+    "email": "oh2th@iki.fi"
+  },
+  "brandColor": "#5c00ce",
+  "tags": {
+    "en": [
+      "efergy",
+      "engage",
+      "wattson",
+      "ecoeye",
+      "currentcost"
+    ]
+  }
+}
