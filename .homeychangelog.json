@@ -1,5 +1,8 @@
 {
   "1.0.0": {
     "en": "New App: Monitor your energy consumption"
+  },
+  "1.0.1": {
+    "en": "FIX: HTTP get error handling"
   }
 }
