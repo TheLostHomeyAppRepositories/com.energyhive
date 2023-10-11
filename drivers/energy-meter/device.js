@@ -90,10 +90,14 @@ class EnergyMeterDevice extends Device {
     const start = end - 59;
 
     this.log(`${this.getName()} - getPowerWm - ${this.getDeviceId()} start: ${start} - end: ${end}`);
-    const kWh = (await this.energyhive.getCurrentValuesSummary(this.getApiKey(), this.getDeviceId(), start, end)) / 60000;
-
-    this.log(`${this.getName()} - getPowerWm - ${kWh} kWh`);
-    return kWh;
+    try {
+      const kWh = (await this.energyhive.getCurrentValuesSummary(this.getApiKey(), this.getDeviceId(), start, end)) / 60000;
+      this.log(`${this.getName()} - getPowerWm - ${kWh} kWh`);
+      return kWh;
+    } catch (error) {
+      this.error(`${this.getName()} - getPowerWm - ${error}`);
+      return 0;
+    }
   }
 
   /**
@@ -115,7 +119,7 @@ class EnergyMeterDevice extends Device {
     const now = new Date();
     const nowMinutes = now.getMinutes();
 
-    const lastMinutePowerkWh = await this.getLastMinutePowerkWh();
+    const lastMinutePowerkWh = this.getLastMinutePowerkWh();
     this.updateMeterPower(lastMinutePowerkWh);
 
     // Restart Interval if offset in seconds is more than 5 seconds
