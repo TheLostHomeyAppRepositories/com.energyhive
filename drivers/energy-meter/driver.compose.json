@@ -1,0 +1,15 @@
+{
+  "name": {
+    "en": "Energy Meter"
+  },
+  "$extends": [
+    "defaults"
+  ],
+  "class": "sensor",
+  "capabilities": [
+    "meter_power"
+  ],
+  "platforms": [
+    "local"
+  ]
+}

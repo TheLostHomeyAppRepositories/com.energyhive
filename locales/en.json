@@ -1,1 +1,16 @@
-{}
+{
+  "pair": {
+    "title": "Energy Hive",
+    "subtitle": "Real-time display of your energy usage.",
+    "apikey_help": "Go to your brand's portal Settings / App Tokens to get an API key.",
+    "apikey_header": "Enter the API key",
+    "apikey_label": "API key",
+    "valid_apikey": "Enter a valid API key",
+    "submit": "Submit"
+  },
+  "errors": {
+    "failed_to_retrieve_devices": "Failed to retrieve devices.",
+    "no_devices": "No devices were found.",
+    "light_not_supported": "Light is not supported for this device."
+  }
+}

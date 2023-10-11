@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Created with Vectornator (http://vectornator.io/) -->
+<svg height="100%" stroke-miterlimit="10" style="fill-rule:nonzero;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;" version="1.1" viewBox="0 0 32 44" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:vectornator="http://vectornator.io" xmlns:xlink="http://www.w3.org/1999/xlink">
+<defs/>
+<g id="Untitled" vectornator:layerName="Untitled">
+<g opacity="1" vectornator:layerName="g">
+<path d="M28.6201 27L3.37988 27C1.5166 27 0 25.4834 0 23.6201L0 3.37988C0 1.5166 1.5166 0 3.37988 0L28.6201 0C30.4834 0 32 1.5166 32 3.37988L32 23.6201C32 25.4834 30.4834 27 28.6201 27ZM3.37988 2C2.61914 2 2 2.61914 2 3.37988L2 23.6201C2 24.3809 2.61914 25 3.37988 25L28.6201 25C29.3809 25 30 24.3809 30 23.6201L30 3.37988C30 2.61914 29.3809 2 28.6201 2L3.37988 2Z" fill="#000000" fill-rule="nonzero" opacity="1" stroke="none" vectornator:layerName="path"/>
+<path d="M22 40L10 40L10 34L22 34L22 40ZM12 38L20 38L20 36L12 36L12 38Z" fill="#000000" fill-rule="nonzero" opacity="1" stroke="none" vectornator:layerName="path"/>
+<path d="M24.7002 14L7.2998 14C5.48047 14 4 12.5195 4 10.7002L4 7.2998C4 5.48047 5.48047 4 7.2998 4L24.7002 4C26.5195 4 28 5.48047 28 7.2998L28 10.7002C28 12.5195 26.5195 14 24.7002 14ZM7.2998 6C6.58301 6 6 6.58301 6 7.2998L6 10.7002C6 11.417 6.58301 12 7.2998 12L24.7002 12C25.417 12 26 11.417 26 10.7002L26 7.2998C26 6.58301 25.417 6 24.7002 6L7.2998 6Z" fill="#000000" fill-rule="nonzero" opacity="1" stroke="none" vectornator:layerName="path"/>
+<path d="M30 44L2 44L2 25L30 25L30 44ZM4 42L28 42L28 27L4 27L4 42Z" fill="#000000" fill-rule="nonzero" opacity="1" stroke="none" vectornator:layerName="path"/>
+<path d="M15.0547 22.5605C14.8291 22.5605 14.6016 22.4844 14.415 22.3281C13.9912 21.9746 13.9336 21.3438 14.2881 20.9199L15.3184 19.6846L14.1807 19.7051C13.7998 19.7373 13.4531 19.5039 13.2773 19.1689C13.1016 18.834 13.1299 18.4287 13.3506 18.1211L15.3535 15.334C15.6748 14.8857 16.2998 14.7822 16.75 15.1055C17.1982 15.4277 17.3008 16.0527 16.9785 16.502L16.1387 17.6699L17.4697 17.6465C17.873 17.623 18.2197 17.8623 18.3896 18.2148C18.5586 18.5674 18.5059 18.9863 18.2549 19.2871L15.8232 22.2012C15.626 22.4385 15.3418 22.5605 15.0547 22.5605Z" fill="#000000" fill-rule="nonzero" opacity="1" stroke="none" vectornator:layerName="path"/>
+<g opacity="1" vectornator:layerName="g">
+<path d="M11.5 31L6.5 31L6.5 25L11.5 25L11.5 31ZM8.5 29L9.5 29L9.5 27L8.5 27L8.5 29Z" fill="#000000" fill-rule="nonzero" opacity="1" stroke="none" vectornator:layerName="path"/>
+<path d="M18.5 31L13.5 31L13.5 25L18.5 25L18.5 31ZM15.5 29L16.5 29L16.5 27L15.5 27L15.5 29Z" fill="#000000" fill-rule="nonzero" opacity="1" stroke="none" vectornator:layerName="path"/>
+<path d="M25.5 31L20.5 31L20.5 25L25.5 25L25.5 31ZM22.5 29L23.5 29L23.5 27L22.5 27L22.5 29Z" fill="#000000" fill-rule="nonzero" opacity="1" stroke="none" vectornator:layerName="path"/>
+</g>
+<path d="M16.9199 40C16.3672 40 15.9199 39.5527 15.9199 39L15.9199 35C15.9199 34.4473 16.3672 34 16.9199 34C17.4727 34 17.9199 34.4473 17.9199 35L17.9199 39C17.9199 39.5527 17.4727 40 16.9199 40Z" fill="#000000" fill-rule="nonzero" opacity="1" stroke="none" vectornator:layerName="path"/>
+<path d="M23 10L9 10C8.44727 10 8 9.55273 8 9C8 8.44727 8.44727 8 9 8L23 8C23.5527 8 24 8.44727 24 9C24 9.55273 23.5527 10 23 10Z" fill="#000000" fill-rule="nonzero" opacity="1" stroke="none" vectornator:layerName="path"/>
+</g>
+</g>
+</svg>
