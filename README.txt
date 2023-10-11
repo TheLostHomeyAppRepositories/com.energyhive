@@ -5,3 +5,5 @@ You will need an API key from the brand portal:
 - Efergy Engage App Tokens: https://engage.efergy.com/settings/tokens
 - Energyhive App Tokens: https://www.energyhive.com/settings/tokens
 - Other may vary
+
+Use the Power by the Hour app to summarize consumption and costs per hour, day, week, month or year.

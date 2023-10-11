@@ -2,7 +2,8 @@
 
 const { Device } = require('homey');
 
-const { sleep, checkCapabilities, startInterval, clearIntervals } = require('../../lib/helpers');
+const { getTimestampInSeconds, checkCapabilities, startInterval, clearIntervals } = require('../../lib/helpers');
+const Energyhive = require('../../lib/energyhive');
 
 const INTERVAL = 60000;
 
@@ -15,8 +16,30 @@ class EnergyMeterDevice extends Device {
     this.log(`${this.getName()} - onInit`);
     this.setUnavailable(`Initializing ${this.getName()}`).catch(this.error);
 
+    this.energyhive = new Energyhive({
+      apikey: this.getApiKey(),
+      deviceId: this.getSetting('deviceId'),
+      logger: this.log,
+    });
+
     checkCapabilities(this);
+
+    // Get last saved meter_power value from store
+    if (this.getCapabilityValue('meter_power') === null) {
+      this.setCapabilityValue('meter_power', this.getStoreValue('meter_power'));
+    }
+
     startInterval(this, INTERVAL);
+    this.setAvailable();
+  }
+
+  getApiKey() {
+    return this.getStoreValue('apikey');
+  }
+
+  getDeviceId() {
+    const deviceData = this.getData();
+    return deviceData.id;
   }
 
   /**
@@ -24,6 +47,7 @@ class EnergyMeterDevice extends Device {
    */
   async onAdded() {
     this.log(`${this.getName()} - onAdded`);
+    this.setStoreValue('meter_power', 0);
     this.log(`${this.getName()} - onAdded done`);
   }
 
@@ -57,6 +81,33 @@ class EnergyMeterDevice extends Device {
   }
 
   /**
+   * @description call energyhive api to get values for the last minute (0-59 seconds of the minute) and sum them
+   * @returns {number} sum of Wm for the last minute
+   */
+
+  async getLastMinutePowerkWh() {
+    const end = (Math.floor(getTimestampInSeconds() / 60) * 60) - 1;
+    const start = end - 59;
+
+    this.log(`${this.getName()} - getPowerWm - ${this.getDeviceId()} start: ${start} - end: ${end}`);
+    const kWh = (await this.energyhive.getCurrentValuesSummary(this.getApiKey(), this.getDeviceId(), start, end)) / 60000;
+
+    this.log(`${this.getName()} - getPowerWm - ${kWh} kWh`);
+    return kWh;
+  }
+
+  /**
+   * @description update meter_power capability value by adding powerkWh value to the previous value
+   * @param {number} powerkWh current power value in kWh
+   */
+  async updateMeterPower(powerkWh) {
+    const meterPower = this.getCapabilityValue('meter_power');
+    const newMeterPower = meterPower + powerkWh;
+    this.log(`${this.getName()} - updateMeterPower - ${meterPower} + ${powerkWh} = ${newMeterPower}`);
+    this.setCapabilityValue('meter_power', newMeterPower);
+  }
+
+  /**
    * @description Main polling interval to perform periodic actions.
    */
   async onInterval() {
@@ -64,15 +115,8 @@ class EnergyMeterDevice extends Device {
     const now = new Date();
     const nowMinutes = now.getMinutes();
 
-    // Purge rain history every five minutes
-    // if (nowMinutes % 5 === 0) this.purgeRainHistory();
-
-    // Trasmit data to APRS-IS every txInterval minutes for devices that transmit.
-    // if (this.txInterval) {
-    //   if (nowMinutes % this.txInterval === 0) {
-    //    this.log(`${this.getName()} - onInterval - txInterval - ${this.txInterval} minutes`);
-    //  }
-    // }
+    const lastMinutePowerkWh = await this.getLastMinutePowerkWh();
+    this.updateMeterPower(lastMinutePowerkWh);
 
     // Restart Interval if offset in seconds is more than 5 seconds
     if (now.getSeconds() >= 5) {

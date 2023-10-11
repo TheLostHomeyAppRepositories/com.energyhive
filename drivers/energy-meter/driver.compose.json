@@ -5,11 +5,12 @@
   "$extends": [
     "defaults"
   ],
-  "class": "sensor",
+  "class": "other",
   "capabilities": [
     "meter_power"
   ],
   "platforms": [
     "local"
-  ]
+  ],
+  "connectivity": ["cloud"]
 }
