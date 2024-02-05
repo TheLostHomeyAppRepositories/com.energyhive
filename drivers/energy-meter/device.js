@@ -2,7 +2,7 @@
 
 const { Device } = require('homey');
 
-const { getTimestampInSeconds, checkCapabilities, startInterval, clearIntervals } = require('../../lib/helpers');
+const { getTimestampInSeconds, checkCapabilities, startInterval, clearIntervals, sleep } = require('../../lib/helpers');
 const Energyhive = require('../../lib/energyhive');
 
 const INTERVAL = 60000;
@@ -89,6 +89,7 @@ class EnergyMeterDevice extends Device {
     const end = (Math.floor(getTimestampInSeconds() / 60) * 60) - 1;
     const start = end - 59;
 
+    await sleep(5000);
     this.log(`${this.getName()} - getPowerWm - ${this.getDeviceId()} start: ${start} - end: ${end}`);
     try {
       const kWh = (await this.energyhive.getHistorySummary(this.getApiKey(), this.getDeviceId(), start, end)) / 60000;
