@@ -109,7 +109,7 @@ class EnergyMeterDevice extends Device {
     const meterPower = this.getCapabilityValue('meter_power');
     const newMeterPower = meterPower + powerkWh;
     this.log(`${this.getName()} - updateMeterPower - ${meterPower} + ${powerkWh} = ${newMeterPower}`);
-    this.setCapabilityValue('meter_power', newMeterPower);
+    this.setCapabilityValue('meter_power', newMeterPower).catch(this.error);
   }
 
   /**
