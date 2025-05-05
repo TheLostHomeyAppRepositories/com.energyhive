@@ -10,5 +10,8 @@
   },
   "1.0.3": {
     "en": "Removes homey-log to sentry.io"
+  },
+  "1.0.4": {
+    "en": "FIX: Catch setCapacityValue errors."
   }
 }
